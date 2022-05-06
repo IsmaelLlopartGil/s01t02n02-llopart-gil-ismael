@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Input {
 
-	public static final Scanner scanner = new Scanner(System.in);
+	public static Scanner scanner = new Scanner(System.in);
 
 	public static byte readByte(String message) {
 		byte userByte = -1;
@@ -12,6 +12,7 @@ public class Input {
 
 		do {
 			System.out.println(message);
+			
 			try {
 				userByte = scanner.nextByte();
 				ok = true;
@@ -31,6 +32,7 @@ public class Input {
 
 		do {
 			System.out.println(message);
+
 			try {
 				userInt = scanner.nextInt();
 				ok = true;
@@ -50,6 +52,7 @@ public class Input {
 
 		do {
 			System.out.println(message);
+			
 			try {
 				userFloat = scanner.nextFloat();
 				ok = true;
@@ -69,6 +72,7 @@ public class Input {
 
 		do {
 			System.out.println(message);
+			
 			try {
 				userDouble = scanner.nextDouble();
 				ok = true;
@@ -88,6 +92,7 @@ public class Input {
 
 		do {
 			System.out.println(message);
+			
 			try {
 				userCharArray = scanner.next().toCharArray();
 
@@ -95,7 +100,7 @@ public class Input {
 					ok = true;
 				} else {
 					System.out.println("Error de format, Introdueix només un caràcter: ");
-				} 
+				}
 			} catch (Exception e) {
 				System.out.println("Error de format: " + e);
 			} finally {
@@ -112,6 +117,7 @@ public class Input {
 
 		do {
 			System.out.println(message);
+			
 			try {
 				userString = scanner.nextLine();
 				ok = true;
@@ -124,21 +130,21 @@ public class Input {
 	}
 
 	public static boolean readYesNo(String message) {
-		char userChar; 
-		boolean isYes=false;
+		char userChar;
+		boolean isYes = false;
 		boolean ok = false;
-		
+
 		do {
-			userChar=readChar(message);
-			
+			userChar = readChar(message);
+
 			if (userChar == 's') {
 				ok = true;
-				isYes=true;
-			} else if (userChar=='n') {
+				isYes = true;
+			} else if (userChar == 'n') {
 				ok = true;
-			} 
+			}
 		} while (!ok);
-		
+
 		return isYes;
 	}
 
